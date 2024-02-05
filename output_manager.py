@@ -7,7 +7,7 @@ from langchain_openai import OpenAI
 import os
 
 # Set OpenAI api key to environment
-openai_api_key = '...'
+openai_api_key = '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'
 os.environ['OPENAI_API_KEY'] = openai_api_key
 
 # set chatgpt model
@@ -40,7 +40,7 @@ model_input = prompt.format_prompt(
     context='The behaviour of the students in the classroom was disruptive and made it difficult for the teacher to conduct the lesson.'
 )
 
-output = model(model_input.to_string())
+output = model.invoke(model_input.to_string())
 
 # if the error is detected during parsing, retry parser is operated with llm model to fix error
 try:
